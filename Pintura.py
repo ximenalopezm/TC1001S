@@ -8,7 +8,11 @@ Exercises
 4. Complete triangle.
 5. Add width parameter.
 """
-# Editado por Daniela Ruiz A01254229
+# Editado por 
+# Kevin Valdez - A01254336
+# Daniela Ruiz - A01254229
+# Ximena López - A01254325
+# Gustavo Betancourt - A01252532
 
 from turtle import *
 import turtle
@@ -17,7 +21,7 @@ from freegames import vector
 
 
 def line(start, end):
-    """Draw line from start to end."""
+    # Funcion que dibuja las lineas
     up()
     goto(start.x, start.y)
     down()
@@ -25,7 +29,7 @@ def line(start, end):
 
 
 def square(start, end):
-    """Draw square from start to end."""
+    # Funcion que dibuja cuadrados
     up()
     goto(start.x, start.y)
     down()
@@ -37,9 +41,8 @@ def square(start, end):
 
     end_fill()
 
-# Agregué la función para dibujar un círculo
+# Función para dibujar un círculo
 def circle(start, end):
-    """Draw circle from start to end."""
 
     t = turtle
     r = 50
@@ -47,9 +50,8 @@ def circle(start, end):
 
     pass  # TODO
 
-# Agregué la función para dibujar un rectángulo
+# Función para dibujar un rectángulo
 def rectangle(start, end):
-    """Draw rectangle from start to end."""
   
     t = turtle
  
@@ -70,9 +72,8 @@ def rectangle(start, end):
 
     pass  # TODO
 
-# Agregué la función para dibujar un triángulo
+# Función para dibujar un triángulo
 def triangle(start, end):
-    """Draw triangle from start to end."""
 
     t = turtle.Turtle()  
     
@@ -91,7 +92,7 @@ def triangle(start, end):
 
 
 def tap(x, y):
-    """Store starting point or draw shape."""
+    # Aqui se inicia el punto de dibujo
     start = state['start']
 
     if start is None:
@@ -104,7 +105,6 @@ def tap(x, y):
 
 
 def store(key, value):
-    """Store value in state at key."""
     state[key] = value
 
 
@@ -119,7 +119,7 @@ onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 
-# Agregué un color
+# Colores agregados
 onkey(lambda: color('pink'), 'P')
 
 onkey(lambda: store('shape', line), 'l')

@@ -22,7 +22,7 @@ path = Turtle(visible=False)
 writer = Turtle(visible=False)
 aim = vector(5, 0)
 pacman = vector(-40, -80)
-ghosts = [ # Modificamos los vectores de los fantasmas desde su inicio para que se muevan mas rapido
+ghosts = [ # Los vectores se cambian para hacer a los fantasmas mas rapidos
     [vector(-180, 160), vector(9, 0)],
     [vector(-180, -160), vector(0, 9)],
     [vector(100, 160), vector(0, -9)],
@@ -132,7 +132,7 @@ def move():
         if valid(point + course):
             point.move(course)
         else:
-            options = [ # Modificamos los vectores de los fantasmas nuevamente para que su velocidad siga igual
+            options = [ # Los vectores se vuelven a cambiar para que las velocidades se queden fijas.
                 vector(9, 0),
                 vector(-9, 0),
                 vector(0, 9),

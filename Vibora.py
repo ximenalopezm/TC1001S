@@ -14,6 +14,7 @@ Exercises
 # Ximena López - A01254325
 # Gustavo Betancourt - A01252532
 
+# Librerias que se saran
 from random import randrange
 from re import M
 from signal import raise_signal
@@ -25,16 +26,17 @@ food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
-"""Lista donde se almacenaran los colores de la serpiente y la comida """
+# Lista donde se almacenaran los colores del juego
 color = []
 
-"""Colores seleccionados"""
+# Paleta de colores en el juego
 y = "yellow"
 g = "green" 
 b = "blue" 
 m = "magenta"
 hp = "hotpink"
-"""Random del color de la serpiente""" 
+
+# Random del color de la serpiente 
 nn = randrange(0,4)
 if nn == 0 :
     color.append(y)
@@ -47,8 +49,7 @@ if nn == 3:
 if nn == 4:
     color.append(hp)
     
-
-"""Funcion que da colores random a la lista que le manda los colores a la comida"""
+# Se crea una funcion que asigna un color diferente cada vez que se corre el juego
 def colors(color):
     y = "yellow"
     g = "green" 
@@ -71,18 +72,18 @@ def colors(color):
         return(color)    
 
 def change(x, y):
-    """Change snake direction."""
+    # Change snake direction.
     aim.x = x
     aim.y = y
 
 
 def inside(head):
-    """Return True if head inside boundaries."""
+    # Es para comprobar que la cabeza de la serpiente no ha chocado con ningun limite
     return -200 < head.x < 190 and -200 < head.y < 190
 
 
 def move():
-    """Move snake forward one segment."""
+    # Hace que la serpiente se mueva por segmente 
     head = snake[-1].copy()
     head.move(aim)
 
@@ -99,8 +100,8 @@ def move():
         food.y = randrange(-15, 15) * 10
         
     else:
-        """Aqui se le aplican los bordes a la comida haciendo que
-        se mueva a la direccion opuesta de la pared por donde quiere salir"""
+        # Aqui se aplican los limites de la comida haciendo que si la serpiente quiere sar por alguno de los lados, esta vaya hacia la 
+        # direccion opuesta
         comida = randrange(0,20)
         if food.x == 190:
             food.x += -20
@@ -111,7 +112,7 @@ def move():
         if food.y == -190:
             food.y += 20 
 
-        """Aqui se modifican los vectores de la comida para que se mueva de posicion"""            
+        # Aqui se modifica la posicion de la comida para que este cambiando de posicion cada que la variable comida cambie de valor            
         if comida == 0:
             food.x += 10
         elif comida == 1:
@@ -129,8 +130,8 @@ def move():
 
 
     for body in snake:
-        """Aqui se modifico el valor del color por el primero de la lista siendo el de la serpiente 
-        y los demas siendo la posicion en su lista vinculada al largo de la serpiente"""    
+        # La lista que se habia creado con colores previamente y en donde toma el color en la posicion 0 y se lo asigna a la serpiente, mientras
+        # que el siguiente valor va a ser el color de la comida, y este cambia cada que la serpiente come   
         square(body.x, body.y, 9, color[0])
     square(food.x, food.y, 9, color[len(snake)])   
     update()

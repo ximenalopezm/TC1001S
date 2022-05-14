@@ -28,7 +28,7 @@ state = {'mark': None}
 hide = [True] * 64
 
 def square(x, y):
-    "Draw white square with black outline at (x, y)."
+    # Se crean los cuadros blancos que van a ser las tarjetas del memorama
     up()
     goto(x, y)
     down()
@@ -40,11 +40,10 @@ def square(x, y):
     end_fill()
 
 def index(x, y):
-    "Convert (x, y) coordinates to tiles index."
+    # Se convierten las coordenadas en tarjetas
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
 
 def xy(count):
-    "Convert tiles count to (x, y) coordinates."
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
 def tap(x, y):
@@ -72,7 +71,7 @@ def tap(x, y):
             print("Ya no quedan fotos")
     
 def draw():
-    "Draw image and tiles."
+    # Dibuja la imagen
     clear()
     goto(0, 0)
     shape(car)

@@ -17,8 +17,8 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 500) / 25 # Aquí se le subió al número que se sumaba a x para que la velocidad en x del proyectil incrementara
-        speed.y = (y + 500) / 25 # Aquí se le subió al número que se sumaba a y para que la velocidad en y del proyectil incrementara
+        speed.x = (x + 500) / 25 # Incrementamos la velocidad en x
+        speed.y = (y + 500) / 25 # Incrementamos la velocidad en y 
 
 def inside(xy):
     "Return True if xy within screen."
@@ -60,7 +60,7 @@ def move():
 
     draw()
     
-    # Aquí se quitó el return porque hacía que el balón desapareciera, y se puso que el balón regresara a su posición original
+    # El return se retiraba porque borraba el balon
     for target in targets:
         if not inside(target):
             target.x = 200
