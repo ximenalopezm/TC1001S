@@ -20,3 +20,5 @@ Se cuentan y desplegan el numero de tarjetas y se agrego un contador que vaya ll
 
 # Proyecto
 El objetivo de nuestro trabajo era hacer un codigo en equipo en repositorios de github, nosotros elegimos hacerlo basandonos en el juego de space invaders pero poniendole nuestro propio toque. Esto lo hicimos importando varias librerias que nos permitieran usar funciones como agregarle sonido a nuestro juego, utilizar valores random en nuestro codigo, la funcion time para modificar la velocidad con la que aparecen las animaciones de nuestro juego, pero la mas importante fue la libreria de turtle, porque con esta pudimos crear nuetra nave, al igual que nuestras balas y aliens, en general todos los personajes en nuestro videojuegos fueron basandose en el comando turtle.
+
+Link del video: https://youtu.be/oc4SNCogvtY
